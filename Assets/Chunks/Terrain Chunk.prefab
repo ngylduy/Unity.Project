@@ -213,10 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   propsSpawn:
   - {fileID: 4823588559171866232}
-  - {fileID: 0}
   - {fileID: 6746769405885419455}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 8096357179929428509}
   propsPrefab:
   - {fileID: 2115549667800581413, guid: 258745db4c055f04db47e769b2ec517a, type: 3}
@@ -4425,9 +4422,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: 623203801
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
