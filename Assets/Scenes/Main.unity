@@ -173,11 +173,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 92228f76c4ea5c84f86e2aa872dfed73, type: 2}
+--- !u!1 &159646796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1545850552322312622, guid: c486a899b247684479d5215f2a3afa54, type: 3}
+  m_PrefabInstance: {fileID: 8237069573928539552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &159646797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1898406398283195697, guid: c486a899b247684479d5215f2a3afa54, type: 3}
   m_PrefabInstance: {fileID: 8237069573928539552}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &159646805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159646796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2403a43e89edadd41856e7b56d7e57c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Gem
+    itemPrefab: {fileID: 5724292813263807344, guid: e08e3aa176ada0549961778622b06068, type: 3}
+    dropRate: 100
 --- !u!1 &208214599
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +580,8 @@ GameObject:
   - component: {fileID: 1895148678}
   - component: {fileID: 1895148680}
   - component: {fileID: 1895148681}
+  - component: {fileID: 1895148682}
+  - component: {fileID: 1895148683}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -721,6 +744,7 @@ MonoBehaviour:
   speed: 5
   moveDir: {x: 0, y: 0}
   lastMoveDir: {x: 0, y: 0}
+  characterData: {fileID: 11400000, guid: 18a8ccfa545f2da408388c609e74cce4, type: 2}
 --- !u!114 &1895148680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,6 +779,42 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1895148682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895148673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b6e60960c054a459d09bd6e71c606d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: 18a8ccfa545f2da408388c609e74cce4, type: 2}
+  experience: 0
+  level: 1
+  experienceCap: 0
+  iFrameDuration: 0.5
+  levelRanges:
+  - startLevel: 1
+    endLevel: 3
+    experienceCapIncrease: 100
+  - startLevel: 4
+    endLevel: 5
+    experienceCapIncrease: 200
+--- !u!114 &1895148683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895148673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e43d48529c2434ead2cabe7ea89941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6964153604567579004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -875,7 +935,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1545850552322312622, guid: c486a899b247684479d5215f2a3afa54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 159646805}
   m_SourcePrefab: {fileID: 100100000, guid: c486a899b247684479d5215f2a3afa54, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

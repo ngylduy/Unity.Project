@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3954b726bad3b5f4db85db11a129f591, type: 3}
-  m_Name: Bear Enemy
+  m_Script: {fileID: 11500000, guid: 0282d3f758441604483848977b3f126c, type: 3}
+  m_Name: Arrow Character
   m_EditorClassIdentifier: 
-  health: 10
-  speed: 3
-  damage: 0
+  statingWeapon: {fileID: 0}
+  health: 1000
+  recovery: 0
+  speed: 5
+  might: 0
+  projectileSpeed: 0

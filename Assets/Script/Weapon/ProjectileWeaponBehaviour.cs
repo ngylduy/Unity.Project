@@ -84,6 +84,14 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
             enemyStats.TakeDamage(currentDamage);
             ReducePierce();
         }
+        else if (other.CompareTag("Prop"))
+        {
+            if (other.gameObject.TryGetComponent(out BreakableProp breakableProp))
+            {
+                breakableProp.TakeDamage(currentDamage);
+                ReducePierce();
+            }
+        }
 
     }
 

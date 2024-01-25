@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2061501362761926254
+--- !u!1 &5724292813263807344
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6535796550796838579}
-  - component: {fileID: 8486061021066442921}
-  - component: {fileID: -5251769012084611240}
-  - component: {fileID: 1599808916203502370}
-  - component: {fileID: 2563201162570407336}
+  - component: {fileID: 3512347377700943819}
+  - component: {fileID: 7401060047207437795}
+  - component: {fileID: -3455535701279637558}
+  - component: {fileID: 5841160425230936369}
   m_Layer: 0
-  m_Name: rock
-  m_TagString: Prop
+  m_Name: gem-1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6535796550796838579
+--- !u!4 &3512347377700943819
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061501362761926254}
+  m_GameObject: {fileID: 5724292813263807344}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.435822, y: -6.7089815, z: 0}
+  m_LocalPosition: {x: -3.657298, y: -3.5670533, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8486061021066442921
+--- !u!212 &7401060047207437795
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061501362761926254}
+  m_GameObject: {fileID: 5724292813263807344}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,40 +72,27 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 349938763
-  m_SortingLayer: 2
+  m_SortingLayerID: 18991977
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 37eaf6e537ca749adaaea0a3e900d411, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1c1523651c71449cb32c2c7933acf8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.9375, y: 1.8125}
+  m_Size: {x: 0.07, y: 0.07}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-5251769012084611240
-MonoBehaviour:
+--- !u!58 &-3455535701279637558
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061501362761926254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea721596ffc0d8b478b058bce556d6c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
---- !u!60 &1599808916203502370
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061501362761926254}
+  m_GameObject: {fileID: 5724292813263807344}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -129,41 +115,22 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2916666, y: 1.2083334}
-    newSize: {x: 1.9375, y: 1.8125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.6458334, y: 0.39583334}
-      - {x: 0.39583334, y: 0.6041667}
-      - {x: -0.1875, y: 0.6041667}
-      - {x: -0.6458334, y: 0.22916667}
-      - {x: -0.6458334, y: -0.6041667}
-      - {x: 0.6458334, y: -0.6041667}
-  m_UseDelaunayMesh: 0
---- !u!114 &2563201162570407336
+  serializedVersion: 2
+  m_Radius: 0.21875
+--- !u!114 &5841160425230936369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061501362761926254}
+  m_GameObject: {fileID: 5724292813263807344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2403a43e89edadd41856e7b56d7e57c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 7622a7bf07ba947459013505658d4f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drops:
-  - name: Health
-    itemPrefab: {fileID: 270745723019914344, guid: d8cf99b799702f744b42ac293d07d764, type: 3}
-    dropRate: 100
+  experienceGranted: 100
