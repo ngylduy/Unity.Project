@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2618004277034109941}
   - component: {fileID: 1874253521031777872}
   - component: {fileID: -6977922401757013106}
+  - component: {fileID: 6109166763129627577}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Enemy
@@ -123,7 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c32fb16675274d478f3f0e6b7afb745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 3d3a9fd2899bd014eab44222cdc63df4, type: 2}
   movement: {x: 0, y: 0}
   moveDir: {x: 0, y: 0, z: 0}
 --- !u!114 &8156118330975988092
@@ -224,3 +224,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 3d3a9fd2899bd014eab44222cdc63df4, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
+  despawnDistance: 20
+--- !u!114 &6109166763129627577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545850552322312622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2403a43e89edadd41856e7b56d7e57c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Gem 1
+    itemPrefab: {fileID: 5724292813263807344, guid: e08e3aa176ada0549961778622b06068, type: 3}
+    dropRate: 100

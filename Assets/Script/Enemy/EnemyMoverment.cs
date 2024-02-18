@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMoverment : MonoBehaviour
 {
 
-    public EnemyScriptableObject enemyData;
+    EnemyStats enemyStats;
     Transform player;
 
     Rigidbody2D rb;
@@ -18,6 +18,7 @@ public class EnemyMoverment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyStats = GetComponent<EnemyStats>();
         rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<PlayerMoverment>().transform;
     }
@@ -34,7 +35,7 @@ public class EnemyMoverment : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition((Vector2)transform.position + (movement * enemyData.Speed * Time.fixedDeltaTime));
+        rb.MovePosition((Vector2)transform.position + (movement * enemyStats.currentMoveSpeed * Time.fixedDeltaTime));
     }
 
 }

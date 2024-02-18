@@ -27,6 +27,7 @@ public class EnemyAnymation : MonoBehaviour
     {
         animator.SetFloat("MoveX", enemyMoverment.moveDir.x);
         animator.SetFloat("MoveY", enemyMoverment.moveDir.y);
+        animator.SetFloat("Magnitude", enemyMoverment.moveDir.magnitude);
     }
 
     void UpdateSpriteFlip()

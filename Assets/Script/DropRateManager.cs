@@ -18,6 +18,12 @@ public class DropRateManager : MonoBehaviour
 
     void OnDestroy()
     {
+
+        if(!gameObject.scene.isLoaded) //Stop the spawning of items if the scene is not loaded
+        {
+            return;
+        }
+
         float random = UnityEngine.Random.Range(0f, 100f);
         List<Drops> possibleDrops = new List<Drops>();
 
