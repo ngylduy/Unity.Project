@@ -10,23 +10,23 @@ public class EnemySpawner : MonoBehaviour
     public class Wave
     {
         public string waveName;
-        public List<enemyGroup> enemyGroups; //List of enemy groups in the wave
-        public int waveQuota; //Total number of enemies in the wave
+        public List<enemyGroup> enemyGroups; //List of enemy groups in this wave
+        public int waveQuota; //Total number of enemies in this wave
         public float spawnInterval; //Time between each spawn
-        public int spawnCount; //Number of enemies spawned at once
+        public int spawnCount; //Number of enemies spawned in this wave
     }
 
     [Serializable]
     public class enemyGroup
     {
         public string enemyName;
-        public int enemyCount;
-        public int spawnCount;
+        public int enemyCount; //Number of enemies in this group
+        public int spawnCount; //The number of enemies spawned in this group
         public GameObject enemyPrefab;
     }
 
     public List<Wave> waves; //List of waves
-    public int currentWave; //Current wave number
+    public int currentWave; //The index of the current wave number
 
     [Header("Spawner Attributes")]
     float spawnTimer; //Timer for spawning enemies
@@ -39,6 +39,8 @@ public class EnemySpawner : MonoBehaviour
     public List<Transform> spawnPositions; //List of spawn positions
 
     Transform player;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +69,7 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator BeginNextWave()
     {
         yield return new WaitForSeconds(waveInterval);
-        if (currentWave < waves.Count - 1)
+        if (currentWave < waves.Count)
         {
             currentWave++;
             caculateWaveQuota();
@@ -119,7 +121,6 @@ public class EnemySpawner : MonoBehaviour
         {
             maxEnemyReached = false;
         }
-
     }
 
     //Called when an enemy is killed

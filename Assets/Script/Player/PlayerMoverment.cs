@@ -16,7 +16,7 @@ public class PlayerMoverment : MonoBehaviour
     Rigidbody2D rb;
     PlayerStats playerStats;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +37,10 @@ public class PlayerMoverment : MonoBehaviour
 
     void InputManagement()
     {
+        if (GameManager.instance.isGameOver || GameManager.instance.currentGameState == GameManager.GameState.Paused)
+        {
+            return;
+        }
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
@@ -50,6 +54,10 @@ public class PlayerMoverment : MonoBehaviour
 
     void Move()
     {
-        rb.velocity = new Vector2(moveDir.x * playerStats.currentMoveSpeed, moveDir.y * playerStats.currentMoveSpeed);
+        if (GameManager.instance.isGameOver || GameManager.instance.currentGameState == GameManager.GameState.Paused)
+        {
+            return;
+        }
+        rb.velocity = new Vector2(moveDir.x * playerStats.CurrentMoveSpeed, moveDir.y * playerStats.CurrentMoveSpeed);
     }
 }

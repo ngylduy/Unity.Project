@@ -6,6 +6,6 @@ public class SpinachPassiveItem : PassiveItems
 {
     protected override void ApplyEffect()
     {
-        playerStats.currentMight *= 1 + passiveItemData.Multiplier / 100f;
+        playerStats.CurrentMight *= 1 + passiveItemData.Multiplier / 100f;
     }
 }
