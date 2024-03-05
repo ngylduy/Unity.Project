@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4436d8d0b767046a3622b1966a98d1, type: 3}
+  m_Name: Soul Eater
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 1bc9dbad7125d724181c2ea9a0e8d7ae, type: 3}
+  maxLevel: 1
+  evolutionData: []
+  behaviour: AuraWeapon
+  baseStats:
+    name: Soul Eater
+    description: Evolved Garlic. Steals hearts. Power increases when recovering HP.
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 5359409092555296413, guid: c4cbb7c0c058c91428b5ff11c69fe5b6, type: 3}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 20
+    damageVariance: 1
+    area: 3
+    speed: 1
+    cooldwon: 1
+    projectileInterval: 0
+    knockback: 1
+    number: 1
+    priercing: 0
+    maxInstances: 50
+  linearGrowth: []
+  randomGrowth: []

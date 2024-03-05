@@ -7,7 +7,7 @@ public class CharacterSelector : MonoBehaviour
 {
 
     public static CharacterSelector instance;
-    public CharacterScriptableObject characterData;
+    public CharacterData characterData;
 
     private void Awake()
     {
@@ -23,12 +23,24 @@ public class CharacterSelector : MonoBehaviour
         }
     }
 
-    public static CharacterScriptableObject GetData()
+    public static CharacterData GetData()
     {
-        return instance.characterData;
+        if (instance && instance.characterData)
+        {
+            return instance.characterData;
+        }
+        else
+        {
+            CharacterData[] characters = Resources.FindObjectsOfTypeAll<CharacterData>();
+            if (characters.Length > 0)
+            {
+                return characters[UnityEngine.Random.Range(0, characters.Length)];
+            }
+        }
+        return null;
     }
 
-    public void SelectCharacter(CharacterScriptableObject data)
+    public void SelectCharacter(CharacterData data)
     {
         characterData = data;
     }

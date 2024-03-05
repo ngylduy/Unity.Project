@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7d2b18ee3829a419099cb77fb68d2f, type: 3}
+  m_Name: Arrow Weapon Level 2
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5922815258082110790, guid: f5820224168796d4d865263db5ef38c2, type: 3}
+  dame: 5
+  speed: 15
+  cooldownDuration: 2
+  pierce: 3
+  level: 2
+  nextLevelPrefab: {fileID: 0}
+  name: Arrow Level 2
+  description: Upgrade Arrow to Level 2
+  weaponIcon: {fileID: 21300000, guid: 95406b6737b66479a80d172766f8bac5, type: 3}

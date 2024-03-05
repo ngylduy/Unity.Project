@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3153870096686221890}
   - component: {fileID: 5944828237402107787}
   - component: {fileID: 6933357465248418366}
-  - component: {fileID: -7704656364718193318}
   m_Layer: 0
   m_Name: 'Garlic '
   m_TagString: Untagged
@@ -4867,17 +4866,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.53
---- !u!114 &-7704656364718193318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2423309511221464331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff61ef752d28494448dd533a8d59697f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: b499b2ce932f6ce47b304dc6c32f17f8, type: 2}
-  destroyAfterSecond: 2

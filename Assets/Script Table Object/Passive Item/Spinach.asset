@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12597d194d512cc47bad2154e20be1a0, type: 3}
+  m_Name: Spinach
+  m_EditorClassIdentifier: 
+  icon: {fileID: -1888565612, guid: 000d12e06e094a5478f72b20cf4ecdfb, type: 3}
+  maxLevel: 5
+  evolutionData:
+  - name: Arrow + Spinach
+    condition: 0
+    consumes: 0
+    envolutionsLevel: 2
+    catalysts:
+    - itemType: {fileID: 11400000, guid: 47a8501db8f99014ebf06bad7551f614, type: 2}
+      level: 8
+    outcome:
+      itemType: {fileID: 11400000, guid: 758909dd95ea687498735021e82d79c0, type: 2}
+      level: 1
+  baseStats:
+    name: Spinach
+    description: Raises inflicted damage by 10%.
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0
+      might: 0.1
+      speed: 0
+      magnet: 0
+  growthl:
+  - name: Level 2
+    description: Raises inflicted damage by 10%.
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0
+      might: 0.1
+      speed: 0
+      magnet: 0
+  - name: Level 3
+    description: Raises inflicted damage by 10%.
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0
+      might: 0.1
+      speed: 0
+      magnet: 0
+  - name: Level 4
+    description: Raises inflicted damage by 10%.
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0
+      might: 0.1
+      speed: 0
+      magnet: 0
+  - name: Level 5
+    description: Raises inflicted damage by 10%.
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0
+      might: 0.1
+      speed: 0
+      magnet: 0

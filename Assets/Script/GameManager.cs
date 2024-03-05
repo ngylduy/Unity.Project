@@ -34,19 +34,19 @@ public class GameManager : MonoBehaviour
     public GameObject levelUpScreen;
 
     [Header("Current stats text")]
-    public Text currentHealthText;
-    public Text currentMoveSpeedText;
-    public Text currentRecoveryText;
-    public Text currentProjectileSpeedText;
-    public Text currentMightText;
-    public Text currentMagnetText;
+    public TMP_Text currentHealthText;
+    public TMP_Text currentMoveSpeedText;
+    public TMP_Text currentRecoveryText;
+    public TMP_Text currentProjectileSpeedText;
+    public TMP_Text currentMightText;
+    public TMP_Text currentMagnetText;
 
     [Header("Result screen display")]
     public Image chosenCharacterImage;
-    public Text chosenCharacterName;
-    public Text levelReached;
+    public TMP_Text chosenCharacterName;
+    public TMP_Text levelReached;
 
-    public Text timeSurvived;
+    public TMP_Text timeSurvived;
 
     public List<Image> chosenWeaponsImages = new List<Image>(6);
     public List<Image> chosenPassiveItemImages = new List<Image>(6);
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     [Header("Stopwatch")]
     public float timeLimit; //Time limit in seconds
     float stopwatchTIme; //Time passed since the game started
-    public Text stopwatchText;
+    public TMP_Text stopwatchText;
 
     //Check if game is over
     public bool isGameOver = false;
@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
     //Check if player is choosing an upgrade
     public bool choosingUpgrade;
 
+    //Reference to the player object
+    public GameObject playerObject;
 
     private void Awake()
     {
@@ -132,18 +134,34 @@ public class GameManager : MonoBehaviour
         Destroy(textObj, duration);
 
         textObj.transform.SetParent(instance.damageTextCanvas.transform);
+        textObj.transform.SetSiblingIndex(0);
 
         WaitForEndOfFrame w = new WaitForEndOfFrame();
         float t = 0;
         float yOffset = 0;
+        Vector3 lastKnownPosition = target.position;
         while (t < duration)
         {
+            if (!rect)
+            {
+                break;
+            }
+
+            //Fade the text to the right alpha value
+            tmpPro.color = new Color(tmpPro.color.r, tmpPro.color.g, tmpPro.color.b, 1 - (t / duration));
+            
+            if (target)
+            {
+                lastKnownPosition = target.position;
+            }
+
+            //Pan the text upwards
+            yOffset += speed * Time.deltaTime;
+            rect.position = referenceCamera.WorldToScreenPoint(lastKnownPosition + new Vector3(0, yOffset));
+
+            //Wait for a frame and update the time
             yield return w;
             t += Time.deltaTime;
-
-            tmpPro.color = new Color(tmpPro.color.r, tmpPro.color.g, tmpPro.color.b, 1 - (t / duration));
-            yOffset += speed * Time.deltaTime;
-            rect.position = referenceCamera.WorldToScreenPoint(target.position + new Vector3(0, yOffset));
         }
     }
 
@@ -188,7 +206,8 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Resumed");
             //Hide the pause menu
             pauseMenu.SetActive(false);
-        } else if (currentGameState == GameState.LevelUp)
+        }
+        else if (currentGameState == GameState.LevelUp)
         {
             ChangeState(previousGameState);
             Time.timeScale = 1f;
@@ -231,7 +250,7 @@ public class GameManager : MonoBehaviour
         resultsScreen.SetActive(true);
     }
 
-    public void SetCharacterStats(CharacterScriptableObject character)
+    public void SetCharacterStats(CharacterData character)
     {
         chosenCharacterImage.sprite = character.Icon;
         chosenCharacterName.text = character.Name;
@@ -242,7 +261,7 @@ public class GameManager : MonoBehaviour
         levelReached.text = level.ToString();
     }
 
-    public void WeaponAndPassiveItem(List<Image> weaponData, List<Image> passiveItemData)
+    public void WeaponAndPassiveItem(List<PlayerInventory.Slot> weaponData, List<PlayerInventory.Slot> passiveItemData)
     {
         if (weaponData.Count != chosenWeaponsImages.Count
         || passiveItemData.Count != chosenPassiveItemImages.Count)
@@ -255,10 +274,10 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < chosenWeaponsImages.Count; i++)
         {
             //Check that sprite is not null in weaponData
-            if (weaponData[i].sprite)
+            if (weaponData[i].image.sprite)
             {
                 chosenWeaponsImages[i].enabled = true;
-                chosenWeaponsImages[i].sprite = weaponData[i].sprite;
+                chosenWeaponsImages[i].sprite = weaponData[i].image.sprite;
             }
             else
             {
@@ -269,10 +288,10 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < chosenPassiveItemImages.Count; i++)
         {
             //Check that sprite is not null in passiveItemData
-            if (passiveItemData[i].sprite)
+            if (passiveItemData[i].image.sprite)
             {
                 chosenPassiveItemImages[i].enabled = true;
-                chosenPassiveItemImages[i].sprite = passiveItemData[i].sprite;
+                chosenPassiveItemImages[i].sprite = passiveItemData[i].image.sprite;
             }
             else
             {
@@ -290,8 +309,7 @@ public class GameManager : MonoBehaviour
 
         if (stopwatchTIme >= timeLimit)
         {
-            stopwatchTIme = timeLimit;
-            GameOver();
+            playerObject.SendMessage("Die");
         }
     }
 
@@ -308,13 +326,14 @@ public class GameManager : MonoBehaviour
     public void StartLevelUp()
     {
         ChangeState(GameState.LevelUp);
+        playerObject.SendMessage("RemoveAndApplyUpgrade");
     }
 
     public void EndLevelUp()
     {
         choosingUpgrade = false;
-        Time.timeScale = 1f;
-        levelUpScreen.SetActive(true);
+        Time.timeScale = 1f; //Resume the game
+        levelUpScreen.SetActive(false);
         ChangeState(GameState.Playing);
     }
 }
