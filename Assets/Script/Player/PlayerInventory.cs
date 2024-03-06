@@ -295,11 +295,13 @@ public class PlayerInventory : MonoBehaviour
 
     void ApplyUpgradeOptions()
     {
+        //Make a duplicate of the available weapons and passives
         List<WeaponData> availableWeaponUpgrades = new List<WeaponData>(availableWeapons);
         List<PassiveData> availablePassiveUpgrades = new List<PassiveData>(availablePassives);
 
         foreach (UpgradeUI upgradeOptions in upgradeUIOptions)
         {
+            //If there are no more upgrades available, exit
             if (availableWeaponUpgrades.Count == 0 && availablePassiveUpgrades.Count == 0)
             {
                 return;
@@ -334,6 +336,7 @@ public class PlayerInventory : MonoBehaviour
                         Weapon w = weaponSlots[i].item as Weapon;
                         if (w != null && w.data == chosenWeaponUpgrade)
                         {
+                            //If the weapon has reached its max level, disable the upgrade UI
                             if (chosenWeaponUpgrade.maxLevel <= w.currentLevel)
                             {
                                 DisableUpgradeUI(upgradeOptions);

@@ -86,6 +86,8 @@ public class Projectile : WeaponEffect
         EnemyStats es = other.GetComponent<EnemyStats>();
         BreakableProp p = other.GetComponent<BreakableProp>();
 
+        //IDamageable p = other.GetComponent<IDamageable>();
+
         if (es)
         {
             //If there is an owner, and the damage source is set to owner

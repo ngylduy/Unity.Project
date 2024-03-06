@@ -71,6 +71,7 @@ public class EnemyStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            GameManager.instance.EnemyDefeated();
         }
     }
 

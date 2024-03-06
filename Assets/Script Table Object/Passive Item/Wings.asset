@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12597d194d512cc47bad2154e20be1a0, type: 3}
   m_Name: Wings
   m_EditorClassIdentifier: 
-  icon: {fileID: -173829292, guid: 000d12e06e094a5478f72b20cf4ecdfb, type: 3}
+  icon: {fileID: 21300000, guid: 475ac279414e0da40bcb8a4500f285da, type: 3}
   maxLevel: 5
+  evolutionData: []
   baseStats:
     name: Wings
     description: Red bull give you wings.

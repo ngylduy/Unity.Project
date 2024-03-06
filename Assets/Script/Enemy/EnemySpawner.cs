@@ -86,14 +86,11 @@ public class EnemySpawner : MonoBehaviour
     void CaculateWaveQuota()
     {
         int currentWaveQuota = 0;
-        foreach (Wave wave in waves)
+        foreach (var enemyGroup in waves[currentWaveQuota].enemyGroups)
         {
-            foreach (var enemyGroup in waves[currentWaveQuota].enemyGroups)
-            {
-                currentWaveQuota += enemyGroup.enemyCount;
-            }
-            waves[currentWave].waveQuota = currentWaveQuota;
+            currentWaveQuota += enemyGroup.enemyCount;
         }
+        waves[currentWave].waveQuota = currentWaveQuota;
     }
 
     /// <summary>
@@ -131,7 +128,7 @@ public class EnemySpawner : MonoBehaviour
     {
         //Decerement the number of enemies alive
         enemyAlive--;
-        
+
         //Reset the maxEnemyReached flag if the number of enemies alive is less than the maximum number of enemies allowed
         if (enemyAlive < maxEnemyAllowed)
         {

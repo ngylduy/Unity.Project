@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a4436d8d0b767046a3622b1966a98d1, type: 3}
   m_Name: Soul Eater
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 1bc9dbad7125d724181c2ea9a0e8d7ae, type: 3}
+  icon: {fileID: 21300000, guid: d7a23862c9171764d89412e2314a8bfa, type: 3}
   maxLevel: 1
   evolutionData: []
   behaviour: AuraWeapon
@@ -30,14 +30,14 @@ MonoBehaviour:
       height: 0
     lifespan: 0
     damage: 20
-    damageVariance: 1
-    area: 3
-    speed: 1
+    damageVariance: 5
+    area: 10
+    speed: 0
     cooldwon: 1
     projectileInterval: 0
-    knockback: 1
-    number: 1
+    knockback: 0
+    number: 0
     priercing: 0
-    maxInstances: 50
+    maxInstances: 0
   linearGrowth: []
   randomGrowth: []

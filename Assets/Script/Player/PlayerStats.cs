@@ -188,6 +188,8 @@ public class PlayerStats : MonoBehaviour
 
     public List<LevelRange> levelRanges;
 
+    PlayerCollector collector;
+
     PlayerInventory inventory;
     public int weaponSlotIndex;
     public int passiveItemSlotIndex;
@@ -200,12 +202,18 @@ public class PlayerStats : MonoBehaviour
     void Awake()
     {
         characterData = CharacterSelector.GetData();
-        CharacterSelector.instance.DestroySigleton();
+
+        if (CharacterSelector.instance)
+        {
+            CharacterSelector.instance.DestroySigleton();
+        }
 
         inventory = GetComponent<PlayerInventory>();
+        collector = GetComponentInChildren<PlayerCollector>();
 
         //Assign the variables
         baseStats = actualStats = characterData.stats;
+        collector.SetRadius(actualStats.magnet);
         health = actualStats.maxHealth;
     }
 
@@ -260,6 +268,7 @@ public class PlayerStats : MonoBehaviour
                 actualStats += p.GetBoosts();
             }
         }
+        collector.SetRadius(actualStats.magnet);
     }
 
     public void IncreaseExperience(int amount)
@@ -334,6 +343,7 @@ public class PlayerStats : MonoBehaviour
         if (!GameManager.instance.isGameOver)
         {
             GameManager.instance.LevelReached(level);
+            GameManager.instance.EDefeated();
             GameManager.instance.WeaponAndPassiveItem(inventory.weaponSlots, inventory.passiveSlots);
             GameManager.instance.GameOver();
         }
@@ -348,6 +358,8 @@ public class PlayerStats : MonoBehaviour
             {
                 CurrentHealth = actualStats.maxHealth;
             }
+
+            UpdateHealthBar();
         }
     }
 
@@ -361,6 +373,8 @@ public class PlayerStats : MonoBehaviour
             {
                 CurrentHealth = actualStats.maxHealth;
             }
+
+            UpdateHealthBar();
         }
     }
 

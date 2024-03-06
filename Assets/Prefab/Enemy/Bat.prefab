@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 8209417880826202914}
   - component: {fileID: 3959498637501191019}
   - component: {fileID: 3743767067213120349}
-  - component: {fileID: 6798052925735489749}
-  - component: {fileID: 1630398262966910701}
-  - component: {fileID: 820766195506488299}
   - component: {fileID: 6729960259380391528}
   - component: {fileID: 166865541991021794}
+  - component: {fileID: 820766195506488299}
+  - component: {fileID: 1630398262966910701}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Enemy
@@ -32,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5918513706028505780}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.364529, y: -8.701775, z: 0.18391474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -126,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {x: 0, y: 0}
   moveDir: {x: 0, y: 0, z: 0}
---- !u!114 &6798052925735489749
+--- !u!114 &6729960259380391528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,10 +134,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 5918513706028505780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22af0d664b0417d45be2821633947b83, type: 3}
+  m_Script: {fileID: 11500000, guid: 55e9196ec20e39d42ab68588cce5fae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 3959498637501191019}
+  enemyData: {fileID: 11400000, guid: 1c4db08a709d3184688b50aa7b228e78, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
+  despawnDistance: 20
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageColorDuration: 0.2
+  deathFadeTime: 0.5
+--- !u!114 &166865541991021794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5918513706028505780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2403a43e89edadd41856e7b56d7e57c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Gem 2
+    itemPrefab: {fileID: 6147918880088533285, guid: 399d3e15ad343aa49b034a9760dab7d4, type: 3}
+    dropRate: 100
+--- !u!50 &820766195506488299
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5918513706028505780}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &1630398262966910701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184,63 +233,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.88069487, y: 0.7000184}
   m_EdgeRadius: 0
---- !u!50 &820766195506488299
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5918513706028505780}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &6729960259380391528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5918513706028505780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55e9196ec20e39d42ab68588cce5fae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 1c4db08a709d3184688b50aa7b228e78, type: 2}
-  currentMoveSpeed: 0
-  currentHealth: 0
-  currentDamage: 0
-  despawnDistance: 20
---- !u!114 &166865541991021794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5918513706028505780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2403a43e89edadd41856e7b56d7e57c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drops:
-  - name: Gem 2
-    itemPrefab: {fileID: 6147918880088533285, guid: 399d3e15ad343aa49b034a9760dab7d4, type: 3}
-    dropRate: 100

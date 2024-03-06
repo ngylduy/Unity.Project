@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
         GameOver,
         LevelUp
     }
-
+    //Count the number of enemies defeated
+    public int enemiesDefeated = 0;
     //Store the current state of the game
     public GameState currentGameState;
     //Store the previous state of the game
@@ -45,16 +46,20 @@ public class GameManager : MonoBehaviour
     public Image chosenCharacterImage;
     public TMP_Text chosenCharacterName;
     public TMP_Text levelReached;
-
     public TMP_Text timeSurvived;
-
     public List<Image> chosenWeaponsImages = new List<Image>(6);
     public List<Image> chosenPassiveItemImages = new List<Image>(6);
+    public List<TMP_Text> chosenWeaponsText = new List<TMP_Text>(6);
+    public List<TMP_Text> chosenPassiveItemText = new List<TMP_Text>(6);
+
 
     [Header("Stopwatch")]
     public float timeLimit; //Time limit in seconds
     float stopwatchTIme; //Time passed since the game started
     public TMP_Text stopwatchText;
+
+    [Header("Enemy Defeated")]
+    public TMP_Text enemyDefeatedText;
 
     //Check if game is over
     public bool isGameOver = false;
@@ -117,6 +122,12 @@ public class GameManager : MonoBehaviour
                 Debug.LogWarning("Invalid game state");
                 break;
         }
+    }
+
+    public void EnemyDefeated()
+    {
+        // Increment the counter when an enemy is defeated
+        enemiesDefeated++;
     }
 
     IEnumerator GenerateFloatingTextCoroutine(string text, Transform target, float duration = 1f, float speed = 50f)
@@ -261,10 +272,17 @@ public class GameManager : MonoBehaviour
         levelReached.text = level.ToString();
     }
 
+    public void EDefeated()
+    {
+        enemyDefeatedText.text = enemiesDefeated.ToString();
+    }
+
     public void WeaponAndPassiveItem(List<PlayerInventory.Slot> weaponData, List<PlayerInventory.Slot> passiveItemData)
     {
         if (weaponData.Count != chosenWeaponsImages.Count
-        || passiveItemData.Count != chosenPassiveItemImages.Count)
+        || passiveItemData.Count != chosenPassiveItemImages.Count
+        || weaponData.Count != chosenWeaponsText.Count
+        || passiveItemData.Count != chosenPassiveItemText.Count)
         {
             Debug.LogWarning("The number of weapons and the number of images are different");
             return;
@@ -278,10 +296,13 @@ public class GameManager : MonoBehaviour
             {
                 chosenWeaponsImages[i].enabled = true;
                 chosenWeaponsImages[i].sprite = weaponData[i].image.sprite;
+                chosenWeaponsText[i].text = "Level " + weaponData[i].item.currentLevel.ToString();
+                chosenWeaponsText[i].enabled = true;
             }
             else
             {
                 chosenWeaponsImages[i].enabled = false;
+                chosenWeaponsText[i].enabled = false;
             }
         }
 
@@ -292,10 +313,13 @@ public class GameManager : MonoBehaviour
             {
                 chosenPassiveItemImages[i].enabled = true;
                 chosenPassiveItemImages[i].sprite = passiveItemData[i].image.sprite;
+                chosenPassiveItemText[i].text = "Level " + passiveItemData[i].item.currentLevel.ToString();
+                chosenPassiveItemText[i].enabled = true;
             }
             else
             {
                 chosenPassiveItemImages[i].enabled = false;
+                chosenPassiveItemText[i].enabled = false;
             }
         }
 

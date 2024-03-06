@@ -30,6 +30,7 @@ public class AuraWeapon : Weapon
     {
         if (currentAura)
         {
+            currentAura.transform.localScale = new Vector3(currentStats.area, currentStats.area, currentStats.area);
             Destroy(currentAura);
         }
     }

@@ -12,8 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12597d194d512cc47bad2154e20be1a0, type: 3}
   m_Name: Pummarola
   m_EditorClassIdentifier: 
-  icon: {fileID: 1043928337, guid: 000d12e06e094a5478f72b20cf4ecdfb, type: 3}
+  icon: {fileID: 21300000, guid: ff1695cb0d15a8d4984afc246ad62e60, type: 3}
   maxLevel: 5
+  evolutionData:
+  - name: Soul Eater
+    condition: 1
+    consumes: 2
+    envolutionsLevel: 2
+    catalysts:
+    - itemType: {fileID: 11400000, guid: 7a499c1a01129a6448627e48ca94d6ac, type: 2}
+      level: 2
+    outcome:
+      itemType: {fileID: 11400000, guid: 7c79e60fafebda94ab6a54c4ae3f3717, type: 2}
+      level: 1
   baseStats:
     name: Pummarola
     description: Pummarola increases Recovery by 0.2 per level.

@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a4436d8d0b767046a3622b1966a98d1, type: 3}
   m_Name: Garlic
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: dbffbd43d6c08e04abb834c4fb13882d, type: 3}
+  icon: {fileID: 21300000, guid: 8c88639fd0610804f9877be3eb3c8728, type: 3}
   maxLevel: 5
   evolutionData:
   - name: Soul Eater
     condition: 1
     consumes: 2
-    envolutionsLevel: 5
+    envolutionsLevel: 2
     catalysts:
     - itemType: {fileID: 11400000, guid: 89df59905f9c88444b332ad894cce34c, type: 2}
-      level: 5
+      level: 2
     outcome:
       itemType: {fileID: 11400000, guid: 7c79e60fafebda94ab6a54c4ae3f3717, type: 2}
       level: 1
