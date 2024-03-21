@@ -10792,10 +10792,6 @@ MonoBehaviour:
       enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 1545850552322312622, guid: c486a899b247684479d5215f2a3afa54, type: 3}
-    - enemyName: Ocluar
-      enemyCount: 5
-      spawnCount: 0
-      enemyPrefab: {fileID: 5446647997580675100, guid: 734bb04cd501ba0419ae9ce03ce6ae81, type: 3}
     waveQuota: 0
     spawnInterval: 1
     spawnCount: 0
@@ -10805,14 +10801,6 @@ MonoBehaviour:
       enemyCount: 2
       spawnCount: 0
       enemyPrefab: {fileID: 5918513706028505780, guid: 417fbbb318f325a44baa1b9d5b14fd73, type: 3}
-    - enemyName: Devourer
-      enemyCount: 5
-      spawnCount: 0
-      enemyPrefab: {fileID: 107768303843126351, guid: faffc5bd99754b34d802c75a88f31b77, type: 3}
-    - enemyName: Ghost
-      enemyCount: 3
-      spawnCount: 0
-      enemyPrefab: {fileID: 8934323839184496186, guid: acea67ed91da43046b23c92c905f43ba, type: 3}
     waveQuota: 0
     spawnInterval: 3
     spawnCount: 0
@@ -10870,7 +10858,7 @@ MonoBehaviour:
     spawnCount: 0
   currentWave: 0
   enemyAlive: 0
-  maxEnemyAllowed: 10
+  maxEnemyAllowed: 20
   maxEnemyReached: 0
   waveInterval: 10
   spawnPositions:
@@ -13629,6 +13617,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1342024520948106857, guid: 59ad587be4422df41a9d089a3e995f8b, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3150546779168698202, guid: 59ad587be4422df41a9d089a3e995f8b, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -13648,6 +13640,10 @@ PrefabInstance:
     - target: {fileID: 4425436555843357479, guid: 59ad587be4422df41a9d089a3e995f8b, type: 3}
       propertyPath: m_Name
       value: Terrain Chunk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425436555843357479, guid: 59ad587be4422df41a9d089a3e995f8b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5652503329385119800, guid: 59ad587be4422df41a9d089a3e995f8b, type: 3}
       propertyPath: m_Name
